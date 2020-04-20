@@ -11,15 +11,21 @@ html, body {
 }
 
 .ui {
-    z-index: 100;
+	z-index: 100;
 }
 
-.ui h1 {
-	color: red;
+.player {
+	position: fixed;
+	top: calc(50vh - 20px);
+	left: calc(50vw - 20px);
+	background: red;
+	width: 40px;
+	height: 40px;
 }
 
 .hitbox {
 	z-index: 200;
+	opacity: 0;
 }
 
 .loading-screen {
@@ -33,12 +39,4 @@ html, body {
 
 .loading-screen h1 {
 	margin: auto;
-}
-
-.player{
-    position: fixed;
-    background: red;
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
 }
