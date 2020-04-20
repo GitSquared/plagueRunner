@@ -23,6 +23,15 @@ html, body {
 	height: 40px;
 }
 
+.player.n { transform: rotate(0deg); }
+.player.ne { transform: rotate(45deg); }
+.player.e { transform: rotate(90deg); }
+.player.se { transform: rotate(135deg); }
+.player.s { transform: rotate(180deg); }
+.player.sw { transform: rotate(225deg); }
+.player.w { transform: rotate(270deg); }
+.player.nw { transform: rotate(305deg); }
+
 .hitbox {
 	z-index: 200;
 	opacity: 0;
