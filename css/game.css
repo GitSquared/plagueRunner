@@ -10,26 +10,12 @@ html, body {
 	left: 0;
 }
 
-.map {
-	background: center / 3750px 2710px url("../assets/images/Layer-Test.png") no-repeat;
-	background-position: 0px 0px;
-}
-
 .ui {
 	z-index: 100;
 }
 
 .ui h1 {
 	color: red;
-}
-
-.ui #cursor {
-	position: fixed;
-	top: calc(50vh - 2px);
-	left: calc(50vw - 2px);
-	width: 4px;
-	height: 4px;
-	background: red;
 }
 
 .hitbox {

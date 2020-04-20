@@ -1,16 +1,24 @@
-window.gameEngine.map = (x, y) => {
-	const map = [3750, 2710];
-	const view = [window.innerWidth, window.innerHeight];
+class GameMap {
+	constructor(mapComponent, textureUrl, textureSize) {
+		this.element = mapComponent;
+		this.element.style.background = `center / ${textureSize[0]}px ${textureSize[1]}px url("${textureUrl}") no-repeat`;
+		this.textureSize = textureSize;
+	}
 
-	const center = [
-		- (map[0] / 2 - view[0] / 2),
-		- (map[1] / 2 - view[1] / 2)
-	];
+	goTo(x, y) {
+		const map = this.textureSize;
+		const view = [window.innerWidth, window.innerHeight];
 
-	const position = [
-		center[0] + x,
-		center[1] + y
-	];
+		const center = [
+			- (map[0] / 2 - view[0] / 2),
+			- (map[1] / 2 - view[1] / 2)
+		];
 
-	document.querySelector('.map').style.backgroundPosition = `${position[0]}px ${position[1]}px`;
-};
+		const position = [
+			center[0] + x,
+			center[1] + y
+		];
+
+		this.element.style.backgroundPosition = `${position[0]}px ${position[1]}px`;
+	}
+}
