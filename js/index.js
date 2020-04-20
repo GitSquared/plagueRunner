@@ -1,10 +1,6 @@
-let i = 0;
 document.addEventListener('DOMContentLoaded', () => {
 	function main() {
 		let next = window.requestAnimationFrame(main);
-
-		document.querySelector('h1').innerText = `${i}`;
-		i++;
 
 		if (keyboard.keys.up) {
 			y = y + speed;
@@ -37,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let x = 0,
 		y = 0;
 
-	const speed = 10;
+	const speed = 5;
 
 	const keyboard = new KeyboardListener();
 
