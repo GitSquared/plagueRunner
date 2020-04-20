@@ -1,3 +1,37 @@
-*{
-    color: grey;
+html, body {
+	padding: 0;
+}
+
+.map, .ui, .hitbox, .loading-screen {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.map {
+	background: center / 3750px 2710px url("../assets/images/Layer-Test.png") no-repeat;
+	background-position: 0px 0px;
+}
+
+.ui {
+	z-index: 100;
+}
+
+.hitbox {
+	z-index: 200;
+}
+
+.loading-screen {
+	display: flex;
+	z-index: 500;
+}
+
+.loading-screen.hidden {
+	display: none;
+}
+
+.loading-screen h1 {
+	margin: auto;
 }

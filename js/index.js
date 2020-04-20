@@ -16,5 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
+	document.querySelector('.loading-screen').classList.add('hidden');
 	main();
 });
