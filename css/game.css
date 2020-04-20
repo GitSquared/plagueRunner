@@ -11,7 +11,7 @@ html, body {
 }
 
 .ui {
-	z-index: 100;
+    z-index: 100;
 }
 
 .ui h1 {
@@ -33,4 +33,12 @@ html, body {
 
 .loading-screen h1 {
 	margin: auto;
+}
+
+.player{
+    position: fixed;
+    background: red;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
 }
