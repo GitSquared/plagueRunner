@@ -5,6 +5,7 @@ window.addEventListener('load', () => {
 		const playerSize = 40;
 		const speed = 5;
 		const halfSpeed = 3;
+		const player = document.querySelector('.player');
 
 		let newx = x;
 		let newy = y;
@@ -57,7 +58,6 @@ window.addEventListener('load', () => {
 			while (!map.canGo(testx, testy, playerSize, playerSize) && !abandon) {
 				let speedx = newx - x;
 				let speedy = newy - y;
-				console.warn(speedx, speedy);
 
 				if (speedx === 0 && speedy === 0) {
 					abandon = true;
@@ -94,6 +94,9 @@ window.addEventListener('load', () => {
 
 			x = newx;
 			y = newy;
+
+			player.classList.remove(player.classList[1]);
+			player.classList.add(direction);
 		}
 
 		map.goTo(x, y);

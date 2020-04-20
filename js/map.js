@@ -12,7 +12,6 @@ class GameMap {
 	}
 
 	canGo(x, y, width = 1, height = 1) {
-		console.log('test', x, y, width, height);
 		x = (this.textureSize[0] / 2) + x;
 		y = (this.textureSize[1] / 2) + y;
 		const pixels = this.hitbox.getContext('2d').getImageData(x, y, width, height).data;
