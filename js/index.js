@@ -1,7 +1,3 @@
-console.log('hello world');
-
-// Import scripts
-
 let i = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,9 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.querySelector('h1').innerText = `${i}`;
 		i++;
 
-		if (i > 1000) {
-			window.cancelAnimationFrame(next);
-		}
+		window.gameEngine.map(0, 0);
+
+		// if (i > 1000) {
+		//    window.cancelAnimationFrame(next);
+		// }
 	}
 
 	document.querySelector('.loading-screen').classList.add('hidden');
