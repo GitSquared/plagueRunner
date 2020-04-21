@@ -1,7 +1,7 @@
 export default class Entity {
 	constructor(options) {
 		this.speed = options.speed;
-		this.halfSpeed = Math.ceil(options.speed / 2);
+		this.halfSpeed = Math.ceil(options.speed / 2) + 1;
 		this.size = options.size;
 		this.position = [options.x, options.y];
 		this._map = options.map;

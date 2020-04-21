@@ -7,11 +7,11 @@ export default class Player extends Entity {
 			...options,
 			size: 40,
 			speed: 6,
-			x: 0,
-			y: 0
+			x: -54,
+			y: 72
 		});
 		this.element = options.element;
-		this.direction = 'n';
+		this.direction = 's';
 		this.walking = false;
 
 		this._keyboard = new KeyboardListener();
@@ -68,7 +68,7 @@ export default class Player extends Entity {
 		this._map.goTo(this.position[0], this.position[1]);
 
 		if (this._keyboard.konamiCode && this.element.dataset.giant === 'false') {
-			this.element.dataset.giant = 'true';
+			this.element.dataset.giant = 'true'
 		}
 	}
 }
