@@ -1,4 +1,4 @@
-export default class Entities {
+export default class Entity {
 	constructor(options) {
 		this.speed = options.speed;
 		this.halfSpeed = Math.round(options.speed / 2);
