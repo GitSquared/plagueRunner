@@ -1,4 +1,4 @@
-class GameMap {
+export default class GameMap {
 	constructor(mapComponent, textureUrl, textureSize, hitboxCanvas, hitboxImg) {
 		this.element = mapComponent;
 		this.element.style.background = `center / ${textureSize[0]}px ${textureSize[1]}px url("${textureUrl}") no-repeat`;

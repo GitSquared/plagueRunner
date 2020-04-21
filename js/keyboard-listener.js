@@ -1,4 +1,4 @@
-class KeyboardListener {
+export default class KeyboardListener {
 	constructor() {
 		document.addEventListener('keydown', this._keydownListener.bind(this));
 		document.addEventListener('keyup', this._keyupListener.bind(this));

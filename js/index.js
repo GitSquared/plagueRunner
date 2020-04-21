@@ -1,3 +1,6 @@
+import KeyboardListener from './keyboard-listener.js';
+import GameMap from './map.js';
+
 window.addEventListener('load', () => {
 	function main() {
 		let next = window.requestAnimationFrame(main);
