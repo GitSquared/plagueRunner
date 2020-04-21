@@ -6,7 +6,7 @@ export default class Player extends Entity {
 		super({
 			...options,
 			size: 40,
-			speed: 5,
+			speed: 7,
 			x: 0,
 			y: 0
 		});

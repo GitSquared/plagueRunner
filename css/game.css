@@ -1,5 +1,6 @@
 html, body {
 	padding: 0;
+	background: #69c95b;
 }
 
 .map, .ui, .hitbox, .loading-screen {
@@ -16,11 +17,11 @@ html, body {
 
 .player {
 	position: fixed;
-	top: calc(50vh - 20px);
-	left: calc(50vw - 20px);
+	top: calc(50vh - 25px);
+	left: calc(50vw - 25px);
 	background: red;
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 50px;
 	border-radius: 100%;
 }
 
@@ -28,7 +29,7 @@ html, body {
 	content: "";
 	position: absolute;
 	top: -10px;
-	left: 10px;
+	left: 15px;
 	border: 10px solid transparent;
 	border-bottom: 10px solid white;
 }
@@ -50,6 +51,7 @@ html, body {
 .loading-screen {
 	display: flex;
 	z-index: 500;
+	background: white;
 }
 
 .loading-screen.hidden {

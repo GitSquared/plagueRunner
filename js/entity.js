@@ -1,7 +1,7 @@
 export default class Entity {
 	constructor(options) {
 		this.speed = options.speed;
-		this.halfSpeed = Math.round(options.speed / 2);
+		this.halfSpeed = Math.ceil(options.speed / 2);
 		this.size = options.size;
 		this.position = [options.x, options.y];
 		this._map = options.map;
@@ -80,6 +80,10 @@ export default class Entity {
 			test = [newPos[0] - this.size / 2, newPos[1] - this.size / 2];
 		}
 
-		this.position = [newPos[0], newPos[1]];
+		if (this.position[0] !== newPos[0] || this.position[1] !== newPos[1]) {
+			this.position = [newPos[0], newPos[1]];
+			return true;
+		}
+		return false;
 	}
 }
