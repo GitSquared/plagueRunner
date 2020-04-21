@@ -6,6 +6,7 @@ export default class Entity {
 		this.position = [options.x, options.y];
 		this._map = options.map;
 	}
+
 	move(direction) {
 		let newPos = [this.position[0], this.position[1]];
 
@@ -14,7 +15,7 @@ export default class Entity {
 				newPos[1] = this.position[1] - this.speed;
 				break;
 			case 'e':
-				newPos[0] = this.position[0] - this.speed;
+				newPos[0] = this.position[0] + this.speed;
 				break;
 			case 's':
 				newPos[1] = this.position[1] + this.speed;
@@ -76,7 +77,7 @@ export default class Entity {
 			}
 
 			newPos = [this.position[0] + speedx, this.position[1] + speedy];
-			test = [newPos[0] - playerSize / 2, newPos[1] - playerSize / 2];
+			test = [newPos[0] - this.size / 2, newPos[1] - this.size / 2];
 		}
 
 		this.position = [newPos[0], newPos[1]];
