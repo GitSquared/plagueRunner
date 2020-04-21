@@ -11,12 +11,13 @@ export default class Player extends Entity {
 			y: 0
 		});
 		this.element = options.element;
+		this.direction = 'n';
 
 		this._keyboard = new KeyboardListener();
 	}
 
 	loop() {
-		let direction;
+		let direction = null;
 
 		if (this._keyboard.keys.up) {
 			direction = 'n';
@@ -46,10 +47,14 @@ export default class Player extends Entity {
 		if (direction) {
 			super.move(direction);
 
-			this.element.classList.remove(this.element.classList[1]);
-			this.element.classList.add(direction);
+			if (direction !== this.direction) {
+				this.element.classList.remove(this.element.classList[1]);
+				this.element.classList.add(direction);
+
+				this.direction = direction;
+			}
 		}
-		
+
 		this._map.goTo(this.position[0], this.position[1]);
 	}
 }
