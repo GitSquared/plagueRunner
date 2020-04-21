@@ -1,0 +1,23 @@
+{
+  "name": "plagueRunner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitSquared/plagueRunner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitSquared/plagueRunner/issues"
+  },
+  "homepage": "https://github.com/GitSquared/plagueRunner#readme",
+  "devDependencies": {
+    "serve": "^11.3.0"
+  }
+}
