@@ -9,6 +9,21 @@ export default class KeyboardListener {
 			down: false,
 			left: false
 		};
+
+		this.konamiCode = false;
+		this._konamiCode = [
+			'ArrowUp',
+			'ArrowUp',
+			'ArrowDown',
+			'ArrowDown',
+			'ArrowLeft',
+			'ArrowRight',
+			'ArrowLeft',
+			'ArrowRight',
+			'b',
+			'a'
+		];
+		this._konamiCodeProgress = 0;
 	}
 
 	_keydownListener(e) {
@@ -29,6 +44,16 @@ export default class KeyboardListener {
 			case 'KeyA':
 				this.keys.left = true;
 				break;
+		}
+
+		if (e.key === this._konamiCode[this._konamiCodeProgress] && !this.konamiCode) {
+			this._konamiCodeProgress++;
+			if (this._konamiCodeProgress === this._konamiCode.length) {
+				console.warn('KONAMI CODE ACTIVATED');
+				this.konamiCode = true;
+			}
+		} else {
+			this._konamiCodeProgress = 0;
 		}
 	}
 
