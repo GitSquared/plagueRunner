@@ -13,6 +13,39 @@ export default class NPC {
 	}
 
 	loop() {
+		let direction;
+
+		if (this._player.position[1] < this.position[1]) {
+			direction = 'n';
+		}
+		if (this._player.position[0] > this.position[0]) {
+			direction = 'e';
+		}
+		if (this._player.position[1] > this.position[1]) {
+			direction = 's';
+		}
+		if (this._player.position[0] < this.position[0]) {
+			direction = 'w';
+		}
+		if (this._player.position[1] < this.position[1] && this._player.position[0] > this.position[0]) {
+			direction = 'ne';
+		}
+		if (this._player.position[1] > this.position[1] && this._player.position[0] > this.position[0]) {
+			direction = 'se';
+		}
+		if (this._player.position[1] > this.position[1] && this._player.position[0] < this.position[0]) {
+			direction = 'sw';
+		}
+		if (this._player.position[1] < this.position[1] && this._player.position[0] < this.position[0]) {
+			direction = 'ne';
+		}
+
+		if (this._map.goTo(this.position[0], this.position[1], this.size, this.size)) {
+			// Respect walls
+		} else {
+			// Traverse walls
+		}
+
 		if (this.infected) {
 			// Run to player
 		} else {

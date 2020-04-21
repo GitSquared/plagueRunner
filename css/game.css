@@ -15,23 +15,32 @@ html, body {
 	z-index: 100;
 }
 
-.player {
-	position: fixed;
-	top: calc(50vh - 25px);
-	left: calc(50vw - 25px);
-	background: red;
-	width: 50px;
-	height: 50px;
-	border-radius: 100%;
+@keyframes playerWalking {
+	from { background-image: url("../assets/images/player_animation_left.png"); }
+	49.9% { background-image: url("../assets/images/player_animation_left.png"); }
+	50% { background-image: url("../assets/images/player_animation_right.png"); }
+	99.9% { background-image: url("../assets/images/player_animation_right.png"); }
+	to { background-image: url("../assets/images/player_animation_left.png"); }
 }
 
-.player::before {
-	content: "";
-	position: absolute;
-	top: -10px;
-	left: 15px;
-	border: 10px solid transparent;
-	border-bottom: 10px solid white;
+.player {
+	position: fixed;
+	top: calc(50vh - 30px);
+	left: calc(50vw - 40px);
+	background: center/contain url("../assets/images/player_static.png") no-repeat;
+	width: 80px;
+	height: 60px;
+}
+
+.player[data-walking="true"] {
+	animation: .6s linear playerWalking infinite;
+}
+
+.player[data-giant="true"] {
+	top: calc(50vh - 125px);
+	left: calc(50vw - 150px);
+	width: 300px;
+	height: 250px;
 }
 
 .player.n  { transform: rotate(0deg);   }

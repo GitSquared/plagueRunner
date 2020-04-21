@@ -12,6 +12,7 @@ export default class Player extends Entity {
 		});
 		this.element = options.element;
 		this.direction = 'n';
+		this.walking = false;
 
 		this._keyboard = new KeyboardListener();
 	}
@@ -46,6 +47,7 @@ export default class Player extends Entity {
 
 		if (direction) {
 			super.move(direction);
+			this.walking = true;
 
 			if (direction !== this.direction) {
 				this.element.classList.remove(this.element.classList[1]);
@@ -53,8 +55,20 @@ export default class Player extends Entity {
 
 				this.direction = direction;
 			}
+
+			if (this.element.dataset.walking === 'false') {
+				this.element.dataset.walking = 'true';
+			}
+		} else {
+			if (this.element.dataset.walking === 'true') {
+				this.element.dataset.walking = 'false';
+			}
 		}
 
 		this._map.goTo(this.position[0], this.position[1]);
+
+		if (this._keyboard.konamiCode && this.element.dataset.giant === 'false') {
+			this.element.dataset.giant = 'true';
+		}
 	}
 }

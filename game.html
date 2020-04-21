@@ -5,6 +5,9 @@
 	<title>PlagueRunner</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="prefetch" href="assets/images/player_animation_left.png">
+	<link rel="prefetch" href="assets/images/player_animation_right.png">
+
 	<link rel="stylesheet" href="css/game.css">
 
 	<script type="module" src="js/index.js"></script>
@@ -13,7 +16,7 @@
 	<div class="map">
 	</div>
 	<main class="ui">
-		<div class="player n"></div>
+		<div class="player n" data-walking="false" data-giant="false"></div>
 	</main>
 	<div class="hitbox">
 		<canvas class="hitbox-canvas"></canvas>
