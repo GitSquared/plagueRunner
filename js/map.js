@@ -9,6 +9,8 @@ export default class GameMap {
 		this.hitbox.height = textureSize[1];
 
 		this.hitbox.getContext('2d').drawImage(hitboxImg, 0, 0, textureSize[0], textureSize[1]);
+
+		this.screenPosition = [0, 0];
 	}
 
 	canGo(x, y, width = 1, height = 1) {
@@ -40,6 +42,15 @@ export default class GameMap {
 			center[1] - y
 		];
 
+		this.screenPosition = position;
+
 		this.element.style.backgroundPosition = `${position[0]}px ${position[1]}px`;
+	}
+
+	getScreenPos(x, y) {
+		return [
+			this.screenPosition[0] + (this.textureSize[0] / 2) + x,
+			this.screenPosition[1] + (this.textureSize[1] / 2) + y
+		];
 	}
 }

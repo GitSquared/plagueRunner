@@ -24,6 +24,7 @@ html, body {
 }
 
 .player {
+	z-index: 160;
 	position: fixed;
 	top: calc(50vh - 30px);
 	left: calc(50vw - 40px);
@@ -43,17 +44,27 @@ html, body {
 	height: 250px;
 }
 
-.player.n  { transform: rotate(0deg);   }
-.player.ne { transform: rotate(45deg);  }
-.player.e  { transform: rotate(90deg);  }
-.player.se { transform: rotate(135deg); }
-.player.s  { transform: rotate(180deg); }
-.player.sw { transform: rotate(225deg); }
-.player.w  { transform: rotate(270deg); }
-.player.nw { transform: rotate(305deg); }
+.npc {
+	z-index: 150;
+	position: fixed;
+	top: -120px;
+	left: -120px;
+	width: 80px;
+	height: 68px;
+	background: center/contain url("../assets/images/zombie_static.png") no-repeat;
+}
+
+[data-orientation="n"]  { transform: rotate(0deg);   }
+[data-orientation="ne"] { transform: rotate(45deg);  }
+[data-orientation="e"]  { transform: rotate(90deg);  }
+[data-orientation="se"] { transform: rotate(135deg); }
+[data-orientation="s"]  { transform: rotate(180deg); }
+[data-orientation="sw"] { transform: rotate(225deg); }
+[data-orientation="w"]  { transform: rotate(270deg); }
+[data-orientation="nw"] { transform: rotate(305deg); }
 
 .hitbox {
-	z-index: 200;
+	/* z-index: 200; */
 	opacity: 0;
 }
 

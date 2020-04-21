@@ -7,7 +7,12 @@ export default class Entity {
 		this._map = options.map;
 	}
 
-	move(direction) {
+	move(direction, force = false, ignoreDiagonalHalfSpeed = false) {
+		const halfSpeedBackup = this.halfSpeed;
+		if (ignoreDiagonalHalfSpeed) {
+			this.halfSpeed = this.speed;
+		}
+
 		let newPos = [this.position[0], this.position[1]];
 
 		switch(direction) {
@@ -39,6 +44,12 @@ export default class Entity {
 				newPos[0] = this.position[0] - this.halfSpeed;
 				newPos[1] = this.position[1] - this.halfSpeed;
 				break;
+		}
+
+		if (force === true) {
+			this.position = [newPos[0], newPos[1]];
+			this.halfSpeed = halfSpeedBackup;
+			return true;
 		}
 
 		let test = [newPos[0] - this.size / 2, newPos[1] - this.size / 2];
@@ -79,6 +90,8 @@ export default class Entity {
 			newPos = [this.position[0] + speedx, this.position[1] + speedy];
 			test = [newPos[0] - this.size / 2, newPos[1] - this.size / 2];
 		}
+
+		this.halfSpeed = halfSpeedBackup;
 
 		if (this.position[0] !== newPos[0] || this.position[1] !== newPos[1]) {
 			this.position = [newPos[0], newPos[1]];

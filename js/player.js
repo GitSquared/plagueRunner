@@ -50,8 +50,7 @@ export default class Player extends Entity {
 			this.walking = true;
 
 			if (direction !== this.direction) {
-				this.element.classList.remove(this.element.classList[1]);
-				this.element.classList.add(direction);
+				this.element.dataset.orientation = direction;
 
 				this.direction = direction;
 			}
