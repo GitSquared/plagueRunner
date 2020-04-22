@@ -1,6 +1,6 @@
 html, body {
   padding: 0;
-  background: #312E2E;
+  background: #171515;
   color: #FFFFFF;
 }
 
@@ -9,21 +9,52 @@ html, body {
   margin: 0 auto;
 }
 
-.presentation h3 {
+/*  MAIN  */
+
+header h3 {
   font-size: 30px;
   text-transform: uppercase;
   text-align: center;
 }
 
-.presentation img {
-  width : 120px;
-  image-orientation: 90deg;
+header
+{
+  display: flex;
+  justify-content: space-between;
 }
 
+header .logo 
+{
+  width : 300px;
+}
+
+header .perso {
+  width : 120px;
+  transform: rotate(180deg);
+}
+
+
+/*  MAIN  */
+
+.synopsis 
+{
+  background-image: url("../assets/images/apocalypse.jpg") ;
+}
+
+.gameplay img
+{
+  width : 120px;
+}
 
 .items img {
   width: 100px;
 }
+
+.infected{
+  text-transform: uppercase;
+  background-image: url("../assets/images/blood.png") ;
+}
+
 
 .playButton {
   display:block;
@@ -41,3 +72,7 @@ html, body {
   cursor: pointer;
 }
 
+.conclusion 
+{
+background-image: url("../assets/images/map.jpg") ;
+}
