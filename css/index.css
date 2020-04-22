@@ -9,18 +9,24 @@ html, body {
   margin: 0 auto;
 }
 
-/*  MAIN  */
+/*  HEADER  */
 
-header h3 {
-  font-size: 30px;
-  text-transform: uppercase;
-  text-align: center;
+header img 
+{
+  margin: 10px 30px;
+
 }
 
-header
+header .images
+{
+display: flex;
+justify-content: center;
+}
+
+.chase 
 {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 header .logo 
@@ -28,17 +34,35 @@ header .logo
   width : 300px;
 }
 
-header .perso {
+header .perso 
+{
   width : 120px;
   transform: rotate(180deg);
 }
 
+header .chase
+{
+  margin-top: 60px;
+}
 
-/*  MAIN  */
+
+header h3 {
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/*  HEADER */
+
 
 .synopsis 
 {
   background-image: url("../assets/images/apocalypse.jpg") ;
+}
+
+.synopsis span
+{
+  text-transform: uppercase;
 }
 
 .gameplay img
@@ -46,8 +70,16 @@ header .perso {
   width : 120px;
 }
 
+.items 
+{
+  display: flex;
+  justify-content: center;
+
+}
+
 .items img {
-  width: 100px;
+  width: 90px;
+  margin: 0 30px;
 }
 
 .infected{
@@ -58,7 +90,7 @@ header .perso {
 
 .playButton {
   display:block;
-  width: 200px;
+  width: 150px;
   height: 45px;
   line-height: 45px;
   border-radius: 10px;
@@ -67,7 +99,7 @@ header .perso {
   text-align: center;
   text-decoration: none;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 30px;
   color: #FFFFFF;
   cursor: pointer;
 }
