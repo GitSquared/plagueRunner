@@ -13,6 +13,7 @@ export default class NPC extends Entity {
 		this._player = options.player;
 		this.direction = 'n';
 		this.hasGotOut = false;
+		this.destroyed = false;
 
 		// Create new DOM element and store it in this.element
 		let element = document.createElement('div');
@@ -22,6 +23,10 @@ export default class NPC extends Entity {
 	}
 
 	loop() {
+		if (this.destroyed) {
+			return;
+		}
+
 		const diff = [this.position[0] - this._player.position[0], this.position[1] - this._player.position[1]];
 		const normalizedDiff = diff.map(n => (n < 0) ? ~n+1 : n);
 
@@ -57,9 +62,15 @@ export default class NPC extends Entity {
 
 		const [left, top] = this._map.getScreenPos(this.position[0], this.position[1]);
 
-		if (left > -100 && top > -100 && left < (window.innerWidth + 100) && top < (window.innerHeight + 100)) {
+		if (left > -50 && top > -50 && left < (window.innerWidth + 50) && top < (window.innerHeight + 50)) {
 			this.element.style.left = `${left - 40}px`;
 			this.element.style.top = `${top - 34}px`;
+		}
+
+		console.log(left, top, window.innerWidth, window.innerHeight);
+		if (left < -150 || top < -150 && left > (window.innerWidth + 150) || top > (window.innerHeight + 150)) {
+			console.warn('Despawn');
+			this.destroy();
 		}
 	}
 
@@ -146,5 +157,6 @@ export default class NPC extends Entity {
 
 	destroy() {
 		this.element.remove();
+		this.destroyed = true;
 	}
 }
