@@ -1,0 +1,10 @@
+html, body
+{
+    padding: 0;
+    background: #312E2E;
+}
+
+.container
+{
+  width: 960px;
+}
