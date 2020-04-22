@@ -12,6 +12,7 @@ export default class NPC extends Entity {
 		this.infected = options.infected || true;
 		this._player = options.player;
 		this.direction = 'n';
+		this.hasGotOut = false;
 
 		// Create new DOM element and store it in this.element
 		let element = document.createElement('div');
@@ -34,7 +35,23 @@ export default class NPC extends Entity {
 				}
 			}
 
-			this.move(diff);
+			let ignore = null;
+			if ((normalizedDiff[1] > normalizedDiff[0] * 2 || normalizedDiff[0] > normalizedDiff[1] * 2) && this.hasGotOut) {
+				if (normalizedDiff[1] > normalizedDiff[0]) {
+					ignore = 'x';
+				}
+				if (normalizedDiff[0] > normalizedDiff[1]) {
+					ignore = 'y';
+				}
+			}
+
+			let diagonal = false;
+			let roundedDiff = normalizedDiff.map(x => Math.round(x / 100) * 100);
+			if (roundedDiff[0] === roundedDiff[1] && this.hasGotOut) {
+				diagonal = true;
+			}
+
+			this.move(diff, diagonal, ignore);
 			this.speed = speedBackup;
 		}
 
@@ -46,40 +63,67 @@ export default class NPC extends Entity {
 		}
 	}
 
-	move(diff) {
+	move(diff, diagonal = false, ignore = null) {
 		let direction;
 
-		if (diff[1] > 0) {
+		if (diff[1] > 0 && ignore !== 'y') {
 			direction = 'n';
 		}
-		if (diff[0] < 0) {
+		if (diff[0] < 0 && ignore !== 'x') {
 			direction = 'e';
 		}
-		if (diff[1] < 0) {
+		if (diff[1] < 0 && ignore !== 'y') {
 			direction = 's';
 		}
-		if (diff[0] > 0) {
+		if (diff[0] > 0 && ignore !== 'x') {
 			direction = 'w';
 		}
-		if (diff[1] > 0 && diff[0] < 0) {
+		if (diff[1] > 0 && diff[0] < 0 && diagonal) {
 			direction = 'ne';
 		}
-		if (diff[1] < 0 && diff[0] < 0) {
+		if (diff[1] < 0 && diff[0] < 0 && diagonal) {
 			direction = 'se';
 		}
-		if (diff[1] < 0 && diff[0] > 0) {
+		if (diff[1] < 0 && diff[0] > 0 && diagonal) {
 			direction = 'sw';
 		}
-		if (diff[1] > 0 && diff[0] > 0) {
+		if (diff[1] > 0 && diff[0] > 0 && diagonal) {
 			direction = 'nw';
 		}
 
-		if (this._map.canGo(this.position[0], this.position[1], this.size, this.size)) {
+		if (this.hasGotOut || this._map.canGo(this.position[0], this.position[1], this.size, this.size)) {
 			// Respect walls
-			if (!super.move(direction, true, true)) {
+
+			if (!this.hasGotOut) {
+				this.hasGotOut = true;
+			}
+
+			if (!super.move(direction)) {
 				// Moving did not work,
 				// we're probably hitting a building
 				// try another direction
+				switch(direction) {
+					case 'n':
+					case 's':
+						direction = (diff[0] > 0) ? 'w' : 'e';
+						super.move(direction);
+						break;
+					case 'e':
+					case 'w':
+						direction = (diff[1] > 0) ? 'n' : 's';
+						super.move(direction);
+						break;
+					case 'ne':
+					case 'nw':
+					case 'se':
+					case 'sw':
+						direction = (diff[0] > 0) ? 'w' : 'e';
+						if (!super.move(direction)) {
+							direction = (diff[1] > 0) ? 'n' : 's';
+							super.move(direction);
+						}
+						break;
+				}
 			}
 
 			if (this.element.classList.contains('hidden')) {

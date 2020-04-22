@@ -54,6 +54,10 @@ html, body {
 	background: center/contain url("../assets/images/zombie_static.png") no-repeat;
 }
 
+.npc.hidden {
+	visibility: hidden;
+}
+
 [data-orientation="n"]  { transform: rotate(0deg);   }
 [data-orientation="ne"] { transform: rotate(45deg);  }
 [data-orientation="e"]  { transform: rotate(90deg);  }
