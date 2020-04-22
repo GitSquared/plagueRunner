@@ -11,6 +11,20 @@ html, body
   margin: 0 auto;
 }
 
+.presentation h3
+{
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.presentation img
+{
+  width : 120px;
+  image-orientation: 90deg;
+}
+
+
 .items img
 {
   width: 100px;
@@ -18,12 +32,18 @@ html, body
 
 .playButton
 {
-
+  width: 200px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #C00606, #8C0707, #630707,#2C2B2B);
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
 }
 
-.playButton a
+  .playButton a
 {
   text-decoration: none;
   color: #FFFFFF;
-  
 }
