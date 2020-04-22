@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<title>PlagueRunner</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<link rel="prefetch" href="assets/images/player_animation_left.png">
-	<link rel="prefetch" href="assets/images/player_animation_right.png">
-
-	<link rel="stylesheet" href="css/game.css">
-
-	<script type="module" src="js/index.js"></script>
-</head>
-<body>
-	<div class="map">
-	</div>
-	<main class="ui">
-		<div class="lifebar"></div>
-		<div class="bonus"></div>
-		<div class="joystick"></div>
-		<div class="player" data-orientation="s" data-walking="false" data-giant="false"></div>
-		<!-- --- -->
-		<div class="npcs"></div>
-	</main>
-	<div class="hitbox">
-		<canvas class="hitbox-canvas"></canvas>
-		<img class="hitbox-img" src="assets/images/hitbox_map.png">
-	</div>
-	<div class="loading-screen">
-		<h1>Chargement...</h1>
-	</div>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>PlagueRunner</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="prefetch" href="assets/images/player_animation_left.png">
+		<link rel="prefetch" href="assets/images/player_animation_right.png">
+		<link rel="stylesheet" href="css/game.css">
+		<script type="module" src="js/index.js"></script>
+	</head>
+	<body>
+		<div class="map">
+		</div>
+		<main class="ui">
+			<!-- UI -->
+			<div class="lifebar"></div>
+			<div class="bonus"></div>
+			<div class="joystick"></div>
+			<!-- player -->
+			<div class="player" data-orientation="s" data-walking="false" data-giant="false"></div>
+			<!-- zombies -->
+			<div class="npcs"></div>
+		</main>
+		<div class="hitbox">
+			<canvas class="hitbox-canvas"></canvas>
+			<img class="hitbox-img" src="assets/images/hitbox_map.png">
+		</div>
+		<div class="loading-screen">
+			<h1>Loading...</h1>
+		</div>
+	</body>
 </html>

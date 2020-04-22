@@ -1,49 +1,43 @@
-html, body
-{
+html, body {
   padding: 0;
   background: #312E2E;
   color: #FFFFFF;
 }
 
-.container
-{
+.container {
   width: 930px;
   margin: 0 auto;
 }
 
-.presentation h3
-{
+.presentation h3 {
   font-size: 30px;
   text-transform: uppercase;
   text-align: center;
 }
 
-.presentation img
-{
+.presentation img {
   width : 120px;
   image-orientation: 90deg;
 }
 
 
-.items img
-{
+.items img {
   width: 100px;
 }
 
-.playButton
-{
+.playButton {
+  display:block;
   width: 200px;
   height: 45px;
   line-height: 45px;
   border-radius: 10px;
+  border: 1px solid #ffffff;
   background: linear-gradient(180deg, #C00606, #8C0707, #630707,#2C2B2B);
   text-align: center;
+  text-decoration: none;
   font-weight: 600;
   font-size: 18px;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 
-  .playButton a
-{
-  text-decoration: none;
-  color: #FFFFFF;
-}
