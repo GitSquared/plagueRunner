@@ -6,9 +6,10 @@ export default class NPC extends Entity {
 			...options,
 			size: 40,
 			speed: 4,
-			x: 200,
-			y: 300
+			x: Math.round(Math.random() * ((options.player.position[0] + 600) - (options.player.position[0] - 600)) + (options.player.position[0] - 600)),
+			y: Math.round(Math.random() * ((options.player.position[1] + 400) - (options.player.position[1] - 400)) + (options.player.position[1] - 400))
 		});
+		this.index = options.index;
 		this.infected = options.infected || true;
 		this._player = options.player;
 		this.direction = 'n';
@@ -67,9 +68,7 @@ export default class NPC extends Entity {
 			this.element.style.top = `${top - 34}px`;
 		}
 
-		console.log(left, top, window.innerWidth, window.innerHeight);
 		if (left < -150 || top < -150 && left > (window.innerWidth + 150) || top > (window.innerHeight + 150)) {
-			console.warn('Despawn');
 			this.destroy();
 		}
 	}

@@ -10,6 +10,12 @@ window.addEventListener('load', async () => {
 		for (const npc of npcs) {
 			npc.loop();
 		}
+
+		for (const i in npcs) {
+			if (npcs[i].destroyed) {
+				npcs.splice(i, 1);
+			}
+		}
 	}
 
 	const map = new GameMap(
@@ -28,16 +34,40 @@ window.addEventListener('load', async () => {
 
 	const gamePhase = 0;
 	const npcs = [];
-	window.gamemap = map;
-	window.player = player;
-	window.npcs = npcs;
-	window.NPC = NPC;
+
+	window.checkNpcHitbox = (x, y, index) => {
+		for (const i in npcs) {
+			if (i == index) continue;
+
+			const diff = [
+				npcs[i].position[0] - x,
+				npcs[i].position[1] - y
+			].map(n => (n < 0) ? ~n+1 : n);
+
+			if (diff[0] < 50 && diff[1] < 50) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 	npcs.push(new NPC({
 		map,
 		player,
-		parent: document.querySelector('.npcs')
+		parent: document.querySelector('.npcs'),
+		index: npcs.length
 	}));
+
+	setInterval(() => {
+		if (npcs.length > 30) return;
+
+		npcs.push(new NPC({
+			map,
+			player,
+			parent: document.querySelector('.npcs'),
+			index: npcs.length
+		}));
+	}, 6000);
 
 	document.querySelector('.loading-screen').classList.add('hidden');
 	main();

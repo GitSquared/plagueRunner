@@ -56,7 +56,7 @@ export default class Entity {
 		let odd = false;
 		let abandon = false;
 
-		while (!this._map.canGo(test[0], test[1], this.size, this.size) && !abandon) {
+		while ((!this._map.canGo(test[0], test[1], this.size, this.size) || ((typeof this.index === 'number') && !window.checkNpcHitbox(newPos[0], newPos[1], this.index))) && !abandon) {
 			let speedx = newPos[0] - this.position[0];
 			let speedy = newPos[1] - this.position[1];
 
