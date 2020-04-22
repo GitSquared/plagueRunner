@@ -44,30 +44,35 @@ window.addEventListener('load', async () => {
 				npcs[i].position[1] - y
 			].map(n => (n < 0) ? ~n+1 : n);
 
-			if (diff[0] < 50 && diff[1] < 50) {
+			if (diff[0] < 15 && diff[1] < 15) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	npcs.push(new NPC({
-		map,
-		player,
-		parent: document.querySelector('.npcs'),
-		index: npcs.length
-	}));
+	let t = 6000;
+	function spawnNew(delay) {
+		setTimeout(() => {
+			if (npcs.length > 30) {
+				spawnNew(t);
+				return;
+			}
 
-	setInterval(() => {
-		if (npcs.length > 30) return;
+			npcs.push(new NPC({
+				map,
+				player,
+				parent: document.querySelector('.npcs'),
+				index: npcs.length
+			}));
 
-		npcs.push(new NPC({
-			map,
-			player,
-			parent: document.querySelector('.npcs'),
-			index: npcs.length
-		}));
-	}, 6000);
+			if (t > 500) {
+				t = t - 500;
+			}
+			spawnNew(t);
+		}, delay);
+	}
+	spawnNew(0);
 
 	document.querySelector('.loading-screen').classList.add('hidden');
 	main();

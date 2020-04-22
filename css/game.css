@@ -44,6 +44,14 @@ html, body {
 	height: 250px;
 }
 
+@keyframes npcWalking {
+	from { background-image: url("../assets/images/zombie_animation_left.png"); }
+	49.9% { background-image: url("../assets/images/zombie_animation_left.png"); }
+	50% { background-image: url("../assets/images/zombie_animation_right.png"); }
+	99.9% { background-image: url("../assets/images/zombie_animation_right.png"); }
+	to { background-image: url("../assets/images/zombie_animation_left.png"); }
+}
+
 .npc {
 	z-index: 150;
 	position: fixed;
@@ -56,6 +64,10 @@ html, body {
 
 .npc.hidden {
 	visibility: hidden;
+}
+
+.npc[data-walking="true"] {
+	animation: .6s linear npcWalking infinite;
 }
 
 [data-orientation="n"]  { transform: rotate(0deg);   }

@@ -21,6 +21,9 @@ export default class NPC extends Entity {
 		element.classList.add('npc');
 		options.parent.append(element);
 		this.element = element;
+
+
+		console.log('New NPC', this.index, 'at', this.position);
 	}
 
 	loop() {
@@ -74,6 +77,8 @@ export default class NPC extends Entity {
 	}
 
 	move(diff, diagonal = false, ignore = null) {
+		let backupPosition = this.position;
+
 		let direction;
 
 		if (diff[1] > 0 && ignore !== 'y') {
@@ -151,6 +156,16 @@ export default class NPC extends Entity {
 		if (direction !== this.direction) {
 			this.element.dataset.orientation = direction;
 			this.direction = direction;
+		}
+
+		if (backupPosition[0] !== this.position[0] || backupPosition[1] !== this.position[1]) {
+			if (this.element.dataset.walking !== 'true') {
+				this.element.dataset.walking = 'true';
+			}
+		} else {
+			if (this.element.dataset.walking === 'true') {
+				this.element.dataset.walking = 'false';
+			}
 		}
 	}
 
