@@ -15,6 +15,39 @@ html, body {
 	z-index: 100;
 }
 
+.lifebar {
+	position: fixed;
+	bottom: 25px;
+	left: 50px;
+	width: 450px;
+	height: 50px;
+	/* background:red; */
+	background: url('../assets/images/full_heart.png') repeat-x;
+	background-size: 45px 45px;
+	image-rendering: pixelated;
+}
+
+.bonus {
+	position: fixed;
+	top: 25px;
+	right: 50px;
+	width: 75px;
+	height: 75px;
+	background: url('../assets/images/empty_bonus.png') no-repeat;
+	background-size: 75px 75px;
+	image-rendering: pixelated;
+}
+
+.joystick{
+	position: fixed;
+	bottom: 25px;
+	right: 50px;
+	width: 150px;
+	height: 150px;
+	background: url('../assets/images/joystick.png') no-repeat;
+	background-size: 150px 150px;
+	image-rendering: pixelated;
+}
 @keyframes playerWalking {
 	from { background-image: url("../assets/images/player_animation_left.png"); }
 	49.9% { background-image: url("../assets/images/player_animation_left.png"); }

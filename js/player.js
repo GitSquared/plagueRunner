@@ -67,7 +67,7 @@ export default class Player extends Entity {
 		this._map.goTo(this.position[0], this.position[1]);
 
 		if (this._keyboard.konamiCode && this.element.dataset.giant === 'false') {
-			this.element.dataset.giant = 'true'
+			this.element.dataset.giant = 'true';
 		}
 	}
 }
