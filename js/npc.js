@@ -21,6 +21,9 @@ export default class NPC extends Entity {
 		element.classList.add('npc');
 		options.parent.append(element);
 		this.element = element;
+
+
+		console.log('New NPC', this.index, 'at', this.position);
 	}
 
 	loop() {
