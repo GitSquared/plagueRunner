@@ -3,7 +3,7 @@ html, body {
 	background: #69c95b;
 }
 
-.map, .ui, .hitbox, .loading-screen {
+.map, .ui, .hitbox, .endgame, .loading-screen {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -21,7 +21,6 @@ html, body {
 	left: 50px;
 	width: 450px;
 	height: 50px;
-	/* background:red; */
 	background: url('../assets/images/full_heart.png') repeat-x;
 	background-size: 45px 45px;
 	image-rendering: pixelated;
@@ -48,6 +47,7 @@ html, body {
 	background-size: 150px 150px;
 	image-rendering: pixelated;
 }
+
 @keyframes playerWalking {
 	from { background-image: url("../assets/images/player_animation_left.png"); }
 	49.9% { background-image: url("../assets/images/player_animation_left.png"); }
@@ -113,7 +113,6 @@ html, body {
 [data-orientation="nw"] { transform: rotate(305deg); }
 
 .hitbox {
-	/* z-index: 200; */
 	opacity: 0;
 }
 
@@ -129,4 +128,17 @@ html, body {
 
 .loading-screen h1 {
 	margin: auto;
+}
+
+.endgame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	z-index: 6000;
+}
+
+.endgame.hidden {
+	display: none;
 }

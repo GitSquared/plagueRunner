@@ -1,4 +1,5 @@
 import GameMap from './map.js';
+import Ui from './ui.js';
 import Player from './player.js';
 import NPC from './npc.js';
 
@@ -16,6 +17,17 @@ window.addEventListener('load', async () => {
 				npcs.splice(i, 1);
 			}
 		}
+
+		ui.loop();
+
+		if (player.life <= 0) {
+			window.cancelAnimationFrame(next);
+
+			const score = Math.round((Date.now() - start) / 5000);
+
+			document.querySelector('.endgame').classList.toggle('hidden');
+			document.querySelector('.scoreboard').innerText = `Score: ${score}`;
+		}
 	}
 
 	const map = new GameMap(
@@ -32,10 +44,13 @@ window.addEventListener('load', async () => {
 		element: document.querySelector('.player')
 	});
 
-	const gamePhase = 0;
+	const ui = new Ui(player);
+
 	const npcs = [];
 
-	window.checkNpcHitbox = (x, y, index) => {
+	const start = Date.now();
+
+	window.checkNpcHitbox = (x, y, index, range = 15) => {
 		for (const i in npcs) {
 			if (i == index) continue;
 
@@ -44,7 +59,7 @@ window.addEventListener('load', async () => {
 				npcs[i].position[1] - y
 			].map(n => (n < 0) ? ~n+1 : n);
 
-			if (diff[0] < 15 && diff[1] < 15) {
+			if (diff[0] < range && diff[1] < range) {
 				return false;
 			}
 		}

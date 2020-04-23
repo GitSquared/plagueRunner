@@ -13,6 +13,8 @@ export default class Player extends Entity {
 		this.element = options.element;
 		this.direction = 's';
 		this.walking = false;
+		this.life = 10;
+		this.lastHit = 0;
 
 		this._keyboard = new KeyboardListener();
 	}
@@ -65,6 +67,15 @@ export default class Player extends Entity {
 		}
 
 		this._map.goTo(this.position[0], this.position[1]);
+
+		if (!window.checkNpcHitbox(this.position[0], this.position[1], -1, 50) && Date.now() - this.lastHit > 800) {
+			this.life -= 0.5;
+			this.lastHit = Date.now();
+			this.element.style.filter = 'hue-rotate(225deg) saturate(3)';
+			setTimeout(() => {
+				this.element.style.filter = '';
+			}, 100);
+		}
 
 		if (this._keyboard.konamiCode && this.element.dataset.giant === 'false') {
 			this.element.dataset.giant = 'true';
