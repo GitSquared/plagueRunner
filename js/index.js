@@ -22,7 +22,11 @@ window.addEventListener('load', async () => {
 
 		if (player.life <= 0) {
 			window.cancelAnimationFrame(next);
-			alert('game over');
+
+			const score = Math.round((Date.now() - start) / 5000);
+
+			document.querySelector('.endgame').classList.toggle('hidden');
+			document.querySelector('.scoreboard').innerText = `Score: ${score}`;
 		}
 	}
 
@@ -43,6 +47,8 @@ window.addEventListener('load', async () => {
 	const ui = new Ui(player);
 
 	const npcs = [];
+
+	const start = Date.now();
 
 	window.checkNpcHitbox = (x, y, index, range = 15) => {
 		for (const i in npcs) {

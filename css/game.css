@@ -3,7 +3,7 @@ html, body {
 	background: #69c95b;
 }
 
-.map, .ui, .hitbox, .loading-screen {
+.map, .ui, .hitbox, .endgame, .loading-screen {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -128,4 +128,17 @@ html, body {
 
 .loading-screen h1 {
 	margin: auto;
+}
+
+.endgame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	z-index: 6000;
+}
+
+.endgame.hidden {
+	display: none;
 }
