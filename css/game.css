@@ -151,6 +151,11 @@ html, body {
 	letter-spacing: 30px;
 }
 
+.endgame h3
+{
+	font-size: 30px;
+	margin-bottom: 30px;
+}
 .endgame img
 {
 	width: 300px;
