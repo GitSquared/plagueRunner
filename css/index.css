@@ -147,7 +147,6 @@ div.blood h4 {
   background-size: contain;
 }
 
-
 div a.playButton {
   display:block;
   width: 150px;
@@ -171,7 +170,7 @@ div a.playButton {
   cursor: pointer;
 }
 
-div a.playButton:hover{
+div a.playButton:hover {
   /* background: linear-gradient(180deg, #2C2B2B,#630707, #8C0707, #C00606); */
   border: 1px solid;
   outline-color: rgba(255, 255, 255, 0);
@@ -179,8 +178,7 @@ div a.playButton:hover{
   text-shadow: 1px 1px 2px #427388;
 }
 
-div.find
-{
+div.find {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 40px;
   padding-left: 20px;
