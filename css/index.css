@@ -11,7 +11,7 @@ html, body {
 
 /*  HEADER  */
 
-header img 
+header img
 {
   margin: 10px 30px;
 
@@ -23,18 +23,18 @@ display: flex;
 justify-content: center;
 }
 
-.chase 
+.chase
 {
   display: flex;
   flex-direction: column;
 }
 
-header .logo 
+header .logo
 {
   width : 300px;
 }
 
-header .perso 
+header .perso
 {
   width : 120px;
   transform: rotate(180deg);
@@ -52,43 +52,49 @@ header h3 {
   text-align: center;
 }
 
-/*  HEADER */
+/*  MAIN */
 
 
-.synopsis 
+div.synopsis
 {
   background-image: url("../assets/images/apocalypse.jpg") ;
+  height: 120px;
+  padding: 5px 20px;
 }
 
-.synopsis span
+div.synopsis span
 {
   text-transform: uppercase;
 }
 
-.gameplay img
+p.gameplay img
 {
   width : 120px;
 }
 
-.items 
+div.items
 {
   display: flex;
   justify-content: center;
 
 }
 
-.items img {
+div.items img {
   width: 90px;
   margin: 0 30px;
 }
 
-.infected{
+div.infected{
   text-transform: uppercase;
   background-image: url("../assets/images/blood.png") ;
 }
 
+div a.playButton {
+  margin: 0 auto;
+}
 
-.playButton {
+
+a.playButton {
   display:block;
   width: 150px;
   height: 45px;
@@ -102,9 +108,15 @@ header h3 {
   font-size: 30px;
   color: #FFFFFF;
   cursor: pointer;
+  box-shadow:2px 2px 6px #C00606;
 }
 
-.conclusion 
+div.conclusion
 {
 background-image: url("../assets/images/map.jpg") ;
+height: 260px;
+}
+
+div.conclusion h2{
+  font-size: 18px;
 }
