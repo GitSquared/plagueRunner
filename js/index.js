@@ -16,6 +16,11 @@ window.addEventListener('load', async () => {
 				npcs.splice(i, 1);
 			}
 		}
+
+		if (player.life <= 0) {
+			window.cancelAnimationFrame(next);
+			alert('game over');
+		}
 	}
 
 	const map = new GameMap(
@@ -35,7 +40,7 @@ window.addEventListener('load', async () => {
 	const gamePhase = 0;
 	const npcs = [];
 
-	window.checkNpcHitbox = (x, y, index) => {
+	window.checkNpcHitbox = (x, y, index, range = 15) => {
 		for (const i in npcs) {
 			if (i == index) continue;
 
@@ -44,7 +49,7 @@ window.addEventListener('load', async () => {
 				npcs[i].position[1] - y
 			].map(n => (n < 0) ? ~n+1 : n);
 
-			if (diff[0] < 15 && diff[1] < 15) {
+			if (diff[0] < range && diff[1] < range) {
 				return false;
 			}
 		}
