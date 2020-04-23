@@ -1,4 +1,5 @@
 import GameMap from './map.js';
+import Ui from './ui.js';
 import Player from './player.js';
 import NPC from './npc.js';
 
@@ -16,6 +17,8 @@ window.addEventListener('load', async () => {
 				npcs.splice(i, 1);
 			}
 		}
+
+		ui.loop();
 
 		if (player.life <= 0) {
 			window.cancelAnimationFrame(next);
@@ -37,7 +40,8 @@ window.addEventListener('load', async () => {
 		element: document.querySelector('.player')
 	});
 
-	const gamePhase = 0;
+	const ui = new Ui(player);
+
 	const npcs = [];
 
 	window.checkNpcHitbox = (x, y, index, range = 15) => {
