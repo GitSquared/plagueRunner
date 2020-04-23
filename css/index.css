@@ -17,7 +17,6 @@ body {
 
 header img {
   margin: 10px 30px;
-
 }
 
 header .images {
@@ -148,7 +147,6 @@ div.blood h4 {
   background-size: contain;
 }
 
-
 div a.playButton {
   display:block;
   width: 150px;
@@ -179,8 +177,7 @@ div a.playButton:hover{
   text-shadow: 1px 1px 2px #427388;
 }
 
-div.find
-{
+div.find {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 40px;
   padding-left: 20px;
