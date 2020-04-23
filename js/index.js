@@ -23,7 +23,7 @@ window.addEventListener('load', async () => {
 		if (player.life <= 0) {
 			window.cancelAnimationFrame(next);
 
-			const score = Math.round((Date.now() - start) / 5000);
+			const score = Math.round((Date.now() - start) / 1000) * 1500;
 
 			document.querySelector('.endgame').classList.toggle('hidden');
 			document.querySelector('.scoreboard').innerText = `Score: ${score}`;
