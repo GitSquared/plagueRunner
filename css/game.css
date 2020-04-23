@@ -21,7 +21,6 @@ html, body {
 	left: 50px;
 	width: 450px;
 	height: 50px;
-	/* background:red; */
 	background: url('../assets/images/full_heart.png') repeat-x;
 	background-size: 45px 45px;
 	image-rendering: pixelated;
@@ -48,6 +47,7 @@ html, body {
 	background-size: 150px 150px;
 	image-rendering: pixelated;
 }
+
 @keyframes playerWalking {
 	from { background-image: url("../assets/images/player_animation_left.png"); }
 	49.9% { background-image: url("../assets/images/player_animation_left.png"); }
@@ -113,7 +113,6 @@ html, body {
 [data-orientation="nw"] { transform: rotate(305deg); }
 
 .hitbox {
-	/* z-index: 200; */
 	opacity: 0;
 }
 

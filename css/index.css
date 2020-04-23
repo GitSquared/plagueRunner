@@ -3,6 +3,7 @@ html, body {
   background: #171515;
   color: #FFFFFF;
 }
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -14,42 +15,36 @@ body {
 
 /*  HEADER  */
 
-header img
-{
+header img {
   margin: 10px 30px;
 
 }
 
-header .images
-{
+header .images {
 display: flex;
 justify-content: center;
 margin-top: 50px;
 }
 
-.chase
-{
+.chase {
   display: flex;
   flex-direction: column;
 }
 
-header .logo
-{
+header .logo {
   width : 300px;
 }
 
-header .perso
-{
+header .perso {
   width : 120px;
   transform: rotate(180deg);
 }
 
-header .chase
-{
+header .chase {
   margin-top: 60px;
 }
 
-header h3.quote{
+header h3.quote {
   font-size: 45px;
   text-transform: uppercase;
   text-align: center;
@@ -57,65 +52,58 @@ header h3.quote{
 
 /*  MAIN */
 
-
-div.synopsis
-{
+div.synopsis {
   background: url("../assets/images/apocalypse.jpg") no-repeat;
   height: 300px;
   padding: 5px 20px;
   background-position: center center;
   image-rendering:  optimizeQuality;
 }
-div.synopsis h3
-{
+
+div.synopsis h3 {
   font-size: 30px;
 }
-#synopsis_text
-{
+
+#synopsis_text {
   font-size: 25px;
   line-height: 45px;
 }
-div.synopsis span
-{
+
+div.synopsis span {
   text-transform: uppercase;
 }
 
-div.pictures
-{
+div.pictures {
   width : 120px;
 }
 
-.gameplay
-{
+.gameplay {
   position: absolute;
   font-size: 20px;
   line-height: 30px;
   width: 465px;
   right: 250px;
-  top: 1050px;
+  top: 1100px;
 }
-.gameplay-img img
-{
+
+.gameplay-img img {
 width: 125px;
 height: 125px;
 }
 
-.gameplay-img
-{
+.gameplay-img {
   display: grid;
   grid-template-columns: 250px 250px;
   grid-template-rows: 125px 125px;
 }
 
-div.items
-{
+div.items {
   display: flex;
   justify-content: center;
 
 }
 
-.goal
-{
+.goal {
 width: 465px;
 font-size: 20px;
 line-height: 30px;
@@ -128,22 +116,24 @@ div.items img {
   margin: 0 30px;
 }
 
-div.infected{
+div.infected {
   margin: 55px 70px;
 }
 
-div.infected p{
+div.infected p {
   font-size: 20px;
+  margin-left: 200px;
 }
 
-div.blood{
+div.blood {
   display: flex;
   justify-content: flex-end;
   text-transform: uppercase;
   font-family: 'Alegreya Sans SC', sans-serif;
+  margin-right: 225px;
 }
 
-div.blood h4{
+div.blood h4 {
   width: 290px;
   height: 130px;
   padding: 40px 65px;
@@ -158,7 +148,6 @@ div.blood h4{
 div a.playButton {
   margin: 60px auto;
 }
-
 
 a.playButton {
   display:block;
@@ -176,21 +165,17 @@ a.playButton {
   cursor: pointer;
 }
 
-div.find
-{
+div.find {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 40px;
   padding-left: 20px;
 }
 
-.find p
-{
+.find p {
   margin: 15px 0;
 }
 
-
-div.conclusion
-{
+div.conclusion {
   background-image: url("../assets/images/map_dark.jpg");
   background-repeat: no-repeat;
   background-size: 935px;
@@ -201,7 +186,7 @@ div.conclusion
   flex-direction: column;
 }
 
-div.conclusion h2{
+div.conclusion h2 {
   font-family: Racing Sans One;
   font-size: 90px;
 }
