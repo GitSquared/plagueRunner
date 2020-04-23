@@ -3,6 +3,9 @@ html, body {
   background: #171515;
   color: #FFFFFF;
 }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
 
 .container {
   width: 930px;
@@ -21,6 +24,7 @@ header .images
 {
 display: flex;
 justify-content: center;
+margin-top: 50px;
 }
 
 .chase
@@ -84,13 +88,16 @@ div.items img {
   margin: 0 30px;
 }
 
-div.infected{
+div.blood{
+  display: flex;
+  justify-content: flex-end;
   text-transform: uppercase;
-  background-image: url("../assets/images/blood.png") ;
+  font-family: 'Alegreya Sans SC', sans-serif;
+
 }
 
 div a.playButton {
-  margin: 0 auto;
+  margin: 60px auto;
 }
 
 
@@ -111,12 +118,27 @@ a.playButton {
   box-shadow:2px 2px 6px #C00606;
 }
 
+.find
+{
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 40px;
+  padding-left: 20px;
+}
+
+
 div.conclusion
 {
-background-image: url("../assets/images/map.jpg") ;
-height: 260px;
+background-image: url("../assets/images/map_dark.jpg");
+background-repeat: no-repeat;
+background-size: 935px;
+height: 685px;
+text-align: center;
+display: flex;
+justify-content: center;
+flex-direction: column;
 }
 
 div.conclusion h2{
-  font-size: 18px;
+  font-family: Racing Sans One;
+  font-size: 90px;
 }
