@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Shlop";
+	src: url("../assets/fonts/shlop.woff2") format("woff2");
+}
+
 html, body {
 	padding: 0;
 	background: #69c95b;
@@ -186,4 +191,8 @@ html, body {
 	font-size: 25px;
 	color: #FFFFFF;
 	cursor: pointer;
+}
+
+.endgame h1 {
+	font-family: Shlop;
 }
