@@ -77,7 +77,7 @@ div.pictures {
   width : 120px;
 }
 
-.gameplay {
+p.gameplay {
   position: absolute;
   font-size: 20px;
   line-height: 30px;
@@ -86,12 +86,15 @@ div.pictures {
   top: 1100px;
 }
 
-.gameplay-img img {
+div.gameplay-img img {
 width: 125px;
 height: 125px;
 }
 
-.gameplay-img {
+div.gameplay-img {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 25px;
   display: grid;
   grid-template-columns: 250px 250px;
   grid-template-rows: 125px 125px;
@@ -104,7 +107,7 @@ div.items {
 }
 
 .goal {
-width: 465px;
+width: 610px;
 font-size: 20px;
 line-height: 30px;
 text-align: center;
