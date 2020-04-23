@@ -146,15 +146,14 @@ html, body {
 
 .endgame h1
 {
-	text-transform: uppercase;
-	font-size: 60px;
-	letter-spacing: 30px;
+	position: relative;
+	left: 385px;
+	 bottom: 142px;
 }
 
 .endgame h3
 {
-	font-size: 30px;
-	margin-bottom: 30px;
+	font-size: 45px;
 }
 .endgame img
 {
