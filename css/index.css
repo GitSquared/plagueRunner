@@ -57,19 +57,51 @@ header h3 {
 
 div.synopsis
 {
-  background-image: url("../assets/images/apocalypse.jpg") ;
-  height: 120px;
+  background: url("../assets/images/apocalypse.jpg") no-repeat;
+  height: 300px;
   padding: 5px 20px;
+  background-position: center center;
+  image-rendering:  optimizeQuality;
 }
-
+div.synopsis h3
+{
+  font-size: 30px;
+}
+#synopsis_text
+{
+  font-size: 25px;
+  line-height: 45px;
+}
 div.synopsis span
 {
   text-transform: uppercase;
 }
 
-p.gameplay img
+div.pictures
 {
   width : 120px;
+}
+
+.gameplay
+{
+  position: absolute;
+  font-size: 20px;
+  line-height: 30px;
+  width: 465px;
+  right: 250px;
+  top: 925px;
+}
+.gameplay-img img
+{
+width: 125px;
+height: 125px;
+}
+
+.gameplay-img
+{
+  display: grid;
+  grid-template-columns: 250px 250px;
+  grid-template-rows: 125px 125px;
 }
 
 div.items
@@ -77,6 +109,15 @@ div.items
   display: flex;
   justify-content: center;
 
+}
+
+.goal
+{
+width: 465px;
+font-size: 20px;
+line-height: 30px;
+text-align: center;
+margin-left: 200px;
 }
 
 div.items img {
