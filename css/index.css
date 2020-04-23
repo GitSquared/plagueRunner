@@ -49,9 +49,8 @@ header .chase
   margin-top: 60px;
 }
 
-
-header h3 {
-  font-size: 30px;
+header h3.quote{
+  font-size: 45px;
   text-transform: uppercase;
   text-align: center;
 }
@@ -129,12 +128,31 @@ div.items img {
   margin: 0 30px;
 }
 
+div.infected{
+  margin: 55px 70px;
+}
+
+div.infected p{
+  font-size: 20px;
+}
+
 div.blood{
   display: flex;
   justify-content: flex-end;
   text-transform: uppercase;
   font-family: 'Alegreya Sans SC', sans-serif;
+}
 
+div.blood h4{
+  width: 290px;
+  height: 130px;
+  padding: 40px 65px;
+  margin: 0;
+  font-size: 60px;
+  text-align: center;
+  background: url("../assets/images/blood.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 div a.playButton {
@@ -145,7 +163,7 @@ div a.playButton {
 a.playButton {
   display:block;
   width: 150px;
-  height: 45px;
+  height: 50px;
   line-height: 45px;
   border-radius: 10px;
   border: 1px solid #ffffff;
@@ -156,10 +174,9 @@ a.playButton {
   font-size: 30px;
   color: #FFFFFF;
   cursor: pointer;
-  box-shadow:2px 2px 6px #C00606;
 }
 
-.find
+div.find
 {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 40px;
@@ -174,14 +191,14 @@ a.playButton {
 
 div.conclusion
 {
-background-image: url("../assets/images/map_dark.jpg");
-background-repeat: no-repeat;
-background-size: 935px;
-height: 685px;
-text-align: center;
-display: flex;
-justify-content: center;
-flex-direction: column;
+  background-image: url("../assets/images/map_dark.jpg");
+  background-repeat: no-repeat;
+  background-size: 935px;
+  height: 685px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 div.conclusion h2{
