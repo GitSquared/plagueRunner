@@ -86,6 +86,7 @@ p.gameplay {
 }
 
 div.gameplay-img img {
+margin: 20px 0;
 width: 125px;
 height: 125px;
 }
@@ -102,16 +103,15 @@ div.gameplay-img {
 div.items {
   display: flex;
   justify-content: center;
-
 }
 
-.goal {
-width: 610px;
-font-size: 20px;
-line-height: 30px;
-text-align: center;
-margin-left: 200px;
+.object {
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  margin: 40px 0;
 }
+
 
 div.items img {
   width: 90px;
@@ -147,13 +147,14 @@ div.blood h4 {
   background-size: contain;
 }
 
+
 div a.playButton {
   display:block;
   width: 150px;
   height: 50px;
   margin: 60px auto;
   line-height: 45px;
-  /* border-radius: 15px; */
+  /* border-radius: 10px; */
   background: linear-gradient(180deg, #990000, #660000, #4c0000,#190000);
   border: 0 solid;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
@@ -171,13 +172,15 @@ div a.playButton {
 }
 
 div a.playButton:hover{
-  background: linear-gradient(180deg, #190000, #4c0000, #660000, #990000);
+  /* background: linear-gradient(180deg, #2C2B2B,#630707, #8C0707, #C00606); */
   border: 1px solid;
+  outline-color: rgba(255, 255, 255, 0);
   outline-offset: 15px;
   text-shadow: 1px 1px 2px #427388;
 }
 
-div.find {
+div.find
+{
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 40px;
   padding-left: 20px;
